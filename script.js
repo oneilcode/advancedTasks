@@ -1,8 +1,20 @@
 'use strict';
 
-const week = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "<i>Суббота</i>", "<i>Воскресенье</i>"];
+const week = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"];
+const body = document.body;
+const today = new Date().getDay() - 1;
 
-let today = (6 + new Date().getDay()) % 7;
-week[today] = `<b>${ week[today] }</b>`;
-
-document.body.insertAdjacentHTML("afterbegin", week.join("<br>"));
+week.forEach((item, index) => {
+   let newDay = document.createElement('div');
+   switch (index) {
+      case today:
+         newDay.style.fontWeight = 'bold';
+         break;
+      case 5:
+      case 6:
+         newDay.style.fontStyle = 'italic';
+         break;
+   }
+   newDay.textContent = item;
+   body.appendChild(newDay);
+});
