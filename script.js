@@ -26,14 +26,12 @@ switch (lang) {
 
 //способ 3
 
-let langArray = [
-   ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
-   ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-];
+let langArray = {
+   ru: ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
+   en: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+};
 
-let langResult = lang === 'ru' ? console.log(langArray[0]) : console.log(langArray[1]);
-
-
+console.log(langArray[lang]);
 
 //задание 2
 let namePerson = prompt('Введите ваше имя');
